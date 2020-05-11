@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../static/style.css" />
+    <title>Data Collector App</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="l-heading mb-3">Collecting Heights</h1>
+      <h3 class="lead py-2">
+        Please Fill the Entries to get the population statistics on height
+      </h3>
+      <div
+        class="message mb-3"
+        style="
+          color: red;
+          font-family: Arial, Helvetica, sans-serif;
+          font-size: 1.2rem;
+        "
+      >
+        {{text | safe}}
+      </div>
+      <form action="{{url_for('success')}}" method="POST">
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input
+            class="form-control"
+            type="email"
+            title="Your details are Safe with us."
+            name="email_name"
+            placeholder="Email"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="height">Height:</label>
+          <input
+            class="form-control"
+            type="number"
+            name="height_name"
+            placeholder="Enter Height (in cm)"
+            min="50"
+            max="300"
+            title="Your details are Safe with us."
+            required
+          />
+        </div>
+        <div class="form-group-btn">
+          <input class="btn" type="submit" value="Submit" />
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
